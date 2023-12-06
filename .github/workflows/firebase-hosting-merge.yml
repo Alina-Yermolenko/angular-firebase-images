@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           cat <<EOF > env.ts
-          ${{ secrets.prod_env }}
+          ${{ PROD_ENV }}
           EOF
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0

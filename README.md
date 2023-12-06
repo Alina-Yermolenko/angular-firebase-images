@@ -2,6 +2,11 @@
 
 This application is a front-end application for keeping favorite images. Each user has their own gallery. The functionality of adding images is implemented via a modal. The application is built using Angular, AngularFire, and Angular Material.
 
+## Development
+
+It's necessary to set all the values in the file env.example.ts and rename it to env.ts.
+
+
 ## Features
 
 - **User Gallery:** Each user has their own gallery where they can add and delete images.
@@ -21,7 +26,7 @@ This application is a front-end application for keeping favorite images. Each us
 
 ## Deployment
 
-The application is deployed using Firebase Hosting.
+The application is deployed using Github Actions to Firebase Hosting.
 
 
 ## Built With

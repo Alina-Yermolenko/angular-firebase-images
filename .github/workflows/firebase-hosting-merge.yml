@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
-        cat <<EOF > env.ts
-        ${{ secrets.prod_env }}
-        EOF
+      - name: Setup environment variables
+        shell: bash
+        run: |
+          cat <<EOF > env.ts
+          ${{ secrets.prod_env }}
+          EOF
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

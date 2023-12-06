@@ -10,6 +10,10 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - run: node -v && npm -v
       - uses: actions/checkout@v3
       - name: Setup environment variables
         shell: bash
@@ -17,7 +21,7 @@ jobs:
           cat <<EOF > env.ts
           ${{ vars.PROD_ENV }}
           EOF
-      - run: npm ci && npm run build
+      - run: npm ci --legacy-peer-deps && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

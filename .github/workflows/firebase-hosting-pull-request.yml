@@ -8,6 +8,7 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
+      - run: node -v && npm -v
       - uses: actions/checkout@v3
       - name: Setup environment variables
         shell: bash

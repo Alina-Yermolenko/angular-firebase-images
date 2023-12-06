@@ -1,0 +1,85 @@
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 20px;
+}
+
+.gallery-item {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(106, 106, 106, 0.554);
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+  }
+
+  &:hover::before {
+    opacity: 0.7;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  a {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    background-color: #000000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+
+  mat-icon {
+    margin: 3px;
+  }
+}
+
+.add-button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 16px;
+  right: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 20px;
+  margin-top: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+    color: #ffffff;
+  }
+}

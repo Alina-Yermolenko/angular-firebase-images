@@ -1,0 +1,35 @@
+<div class="authBlock">
+  <h3>Login</h3>
+  <div class="formGroup">
+    <input
+      type="text"
+      class="formControl"
+      placeholder="Email"
+      [(ngModel)]="userEmail"
+      required
+      [ngClass]="{'error': loginError !== ''}"
+    />
+  </div>
+  <div class="formGroup">
+    <input
+      type="password"
+      class="formControl"
+      placeholder="Password"
+      [(ngModel)]="userPassword"
+      required
+      [ngClass]="{'error': loginError !== ''}"
+    />
+    <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+  </div>
+  <div class="formGroup">
+    <input
+      type="button"
+      class="btn btnPrimary"
+      value="Sign In"
+      (click)="login()"
+    />
+  </div>
+  <div class="formGroup">
+    <p>Not registered yet? <a routerLink="/register">Sign up</a></p>
+  </div>
+</div>

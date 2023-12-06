@@ -1,0 +1,16 @@
+<h2 mat-dialog-title class="dialog-title">Add Image</h2>
+
+<div mat-dialog-content>
+  <div class="input-container">
+    <input type="text" [(ngModel)]="selectedImage" [ngClass]="{'error-border': errorText !== ''}" />
+    <div *ngIf="errorText" class="error-text">{{ errorText }}</div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button class="cancel-button" (click)="dialogRef.close()">Cancel</button>
+  <button mat-button class="upload-button" (click)="uploadImage()" [disabled]="loading">
+    <span *ngIf="loading">Loading...</span>
+    <span *ngIf="!loading">Upload</span>
+  </button>
+</div>

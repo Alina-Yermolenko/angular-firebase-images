@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="gallery-container">
+  <div *ngFor="let image of userGallery" class="gallery-item">
+    <img [src]="image.imageUrl" alt="Gallery Image" />
+    <a (click)="deleteImage(image.id)">
+      <mat-icon>delete</mat-icon>
+    </a>
+  </div>
+  <div class="no-files-text" *ngIf="!userGallery.length">
+    No images yet.
+  </div>
+</div>
+<a mat-fab class="add-button" (click)="openAddImageModal()">
+  +
+</a>

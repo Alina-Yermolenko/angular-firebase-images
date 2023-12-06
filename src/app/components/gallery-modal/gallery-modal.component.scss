@@ -1,0 +1,42 @@
+.dialog-title {
+  text-align: center;
+  color: #000;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.error-border {
+  border-color: #ff0000;
+}
+
+.error-text {
+  font-size: 8px;
+  color: #ff0000;
+}
+
+.cancel-button,
+.upload-button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  background-color: #000;
+  color: #fff;
+}
+
+.upload-button:hover {
+  background-color: #333;
+}
